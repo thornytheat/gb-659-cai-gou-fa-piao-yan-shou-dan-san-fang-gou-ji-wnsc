@@ -10,6 +10,7 @@ from app.modules.m3_quantity.handler import router as m3_quantity_router
 from app.modules.m4_tax.handler import router as m4_tax_router
 from app.modules.m5_matching.handler import router as m5_matching_router
 from app.modules.m6_batches.handler import router as m6_batches_router
+from app.modules.m7_returns.handler import router as m7_returns_router
 
 app = FastAPI(title="采购三方勾稽报告", version=APP_VERSION)
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
@@ -21,6 +22,7 @@ app.include_router(m3_quantity_router)
 app.include_router(m4_tax_router)
 app.include_router(m5_matching_router)
 app.include_router(m6_batches_router)
+app.include_router(m7_returns_router)
 
 @app.on_event("startup")
 def startup():

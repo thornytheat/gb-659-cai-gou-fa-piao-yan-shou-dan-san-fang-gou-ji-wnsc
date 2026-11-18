@@ -10,4 +10,7 @@
 - 时间：存储为带偏移的 ISO 8601，分桶使用半开区间。
 - 空值：缺失键、空串和业务哨兵分别记录。
 - 幂等：完整输入字节与规则版本相同则复用 run_id，不新增结果。
+- 装箱规格：主数据按货号维护多版 pack_code 与 pieces_per_box（Decimal 字符串）；批号缺失时按最小规格保守折算，区间上界按最大规格。
+- 退货红票：conservative_pieces 为当天可冲税件数；covered_pieces 为累计已冲件数；initial_tax 为保守红票税额，added_tax 为批号补齐后累计追加税额；outstanding.pending_tax 为尚欠冲税额。
+- 批号证据：return_batches 以（return_no, batch_no）为唯一键，登记该批实际 pack_code、箱数、折算件数与税额，重跑不产生第二条。
 

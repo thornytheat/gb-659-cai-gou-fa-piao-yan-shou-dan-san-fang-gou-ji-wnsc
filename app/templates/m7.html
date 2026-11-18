@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="kpis">
+  <div class="kpi"><b>退货箱数</b><strong>1</strong><small>箱</small></div>
+  <div class="kpi"><b>当天保守冲税</b><strong>130.00</strong><small>CNY</small></div>
+  <div class="kpi"><b>挂账待冲</b><strong>26.00</strong><small>CNY</small></div>
+  <div class="kpi"><b>规格版本</b><strong>2</strong><small>版</small></div>
+</section>
+<div class="grid grid--quad">
+  <section class="panel">
+    <div class="panel__head"><h2>退货红票台账</h2><span class="state state--ok">保守冲税</span></div>
+    <div class="panel__body panel__body--scroll">
+      <table class="ledger"><thead><tr><th>序号</th><th>业务键</th><th>状态</th><th class="num">值</th></tr></thead>
+      <tbody>{% for row in rows %}<tr><td class="num">{{ loop.index }}</td><td>{{ row.key }}</td><td>{{ row.status }}</td><td class="num">{{ row.value }}</td></tr>{% endfor %}</tbody></table>
+    </div>
+  </section>
+  <section class="panel panel--evidence">
+    <div class="panel__head"><h2>冲税依据与证据</h2><span class="panel__meta">装箱规格 · 批号 · 运行标识</span></div>
+    <div class="panel__body"><div class="evidence"><b>M7 退货红票</b><span>POST /api/returns/register</span><code>批号补齐：/api/returns/supplement</code></div><pre id="result">等待运行</pre></div>
+  </section>
+  <section class="panel panel--status">
+    <div class="panel__head"><h2>勾稽规则</h2><span class="panel__meta">主数据驱动</span></div>
+    <div class="panel__body"><div class="bar"><i style="width:72%"></i></div><div class="legend"><span>最小规格 10 件/箱当天冲</span><span>挂账 2 件待批号</span></div></div>
+  </section>
+</div>
+{% endblock %}

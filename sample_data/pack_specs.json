@@ -1,0 +1,13 @@
+{
+  "000142": [
+    {"pack_code": "OLD-12", "pieces_per_box": "12", "effective_from": "2025-01-01"},
+    {"pack_code": "NEW-10", "pieces_per_box": "10", "effective_from": "2026-06-01"}
+  ],
+  "SKU-B": [
+    {"pack_code": "STD-10", "pieces_per_box": "10", "effective_from": "2025-01-01"}
+  ],
+  "SKU-C": [
+    {"pack_code": "OLD-8", "pieces_per_box": "8", "effective_from": "2025-01-01"},
+    {"pack_code": "NEW-6", "pieces_per_box": "6", "effective_from": "2026-09-01"}
+  ]
+}
