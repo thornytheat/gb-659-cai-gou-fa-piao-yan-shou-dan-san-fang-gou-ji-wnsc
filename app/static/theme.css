@@ -1,0 +1,8 @@
+:root {
+  --bg: #f2f1eb; --rail: #e1e6df; --panel: #ffffff; --panel-2: #f6f8f5;
+  --panel-3: #d9e6dd; --line: #c7cec9; --line-2: #7d8b82; --ink: #18231d;
+  --ink-2: #415149; --ink-3: #68736c; --accent: #177245; --accent-ink: #ffffff;
+  --accent-soft: #d5ecdf; --ok: #167047; --warn: #a76513; --bad: #b4363b;
+  --info: #27658e; --ui: "Helvetica Neue", Arial, sans-serif; --mono: Menlo, Consolas, monospace;
+  --radius: 2px; --radius-sm: 1px; --row: 34px; --gap: 14px; --pad: 16px; --bar: 52px; --dur: 120ms;
+}

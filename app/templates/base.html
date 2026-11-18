@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>{{ title }} · 采购三方勾稽报告</title>
+  <link rel="stylesheet" href="/static/theme.css">
+  <link rel="stylesheet" href="/static/layout.css">
+  <link rel="stylesheet" href="/static/components.css">
+</head>
+<body class="quality-shell" data-endpoint="{{ endpoint }}">
+<div class="app">
+  <aside class="rail">
+    <a class="rail__brand" href="/">PROCURE MATCH</a>
+    <nav class="rail__nav">
+<a class="rail__item" href="/documents"><span>01</span>单据采信</a>
+<a class="rail__item" href="/master"><span>02</span>主数据映射</a>
+<a class="rail__item" href="/quantity"><span>03</span>数量勾稽</a>
+<a class="rail__item" href="/tax"><span>04</span>税额核验</a>
+<a class="rail__item" href="/matching"><span>05</span>多对多匹配</a>
+<a class="rail__item" href="/batches"><span>06</span>差异批次</a>
+    </nav>
+    <div class="rail__foot">{{ version }}<br>RUN READY</div>
+  </aside>
+  <div class="work">
+    <header class="topbar">
+      <strong>{{ title }}</strong>
+      <span class="topbar__meta">RUN-20261116 · ASIA/SHANGHAI</span>
+      <button class="btn btn--primary" id="run">运行样例</button>
+    </header>
+    <main class="content">{% block content %}{% endblock %}</main>
+    <footer class="statusbar"><span>金额单位 CNY · 时区 +08:00</span><span id="feedback">就绪</span></footer>
+  </div>
+</div>
+<script src="/static/app.js"></script>
+<script src="/static/table.js"></script>
+</body>
+</html>
+
